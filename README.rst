@@ -43,7 +43,7 @@ Clone the git repository::
   git clone git://github.com/dylan-lang/opendylan.git --recursive
 
 
-Compilation on UNIX
+Compilation on UNIX #TODO reorg this whole thing!
 ===================
 
 Please note that on 64 bit Linux we need a big stack, the default
@@ -55,8 +55,8 @@ Dependencies
 
 Get MPS or boehm-gc, depending on your platform:
 
-* Linux x86 or FreeBSD x86 (HARP) -> `MPS <http://www.ravenbrook.com/project/mps/release/1.111.0/>`_
-* Mac OS X and all 64 bit (C) -> boehm-gc
+* Linux x86 or FreeBSD x86 (HARP) -> `MPS <http://www.ravenbrook.com/project/mps/release/1.111.0/>`_ 
+* Mac OS X and all 64 bit (C) -> boehm-gc #TODO mention that this isn't needed if using libgc-dev
 
 On Mac OS X, you may find it easiest to install Homebrew and install
 the following::
@@ -68,7 +68,7 @@ Apple. If your installation of ``bdw-gc`` is not universal (doesn't contain
 both i386 and x86_64 code), you will need to uninstall it and install again
 with the ``--universal`` flag.
 
-On Ubuntu, you can install the necessary dependencies with::
+On Ubuntu, you can install the necessary dependencies with:: #TODO works for debian, of couse. :)
 
     apt-get install autoconf automake gcc libgc-dev
 
@@ -81,8 +81,8 @@ To go on and do the build::
   ./autogen.sh
   ./configure \
      --with-mps=/path/to/mps-kit \  # if using the HARP back-end
-     --with-gc=/path/to/boehm-gc-installation \ # if using the C back-end
-     --prefix=/opt/opendylan-current
+     --with-gc=/path/to/boehm-gc-installation \ # if using the C back-end #TODO not needed if using system-wide boehm-gc
+     --prefix=/opt/opendylan-current 
   make 3-stage-bootstrap
   sudo make install
 
